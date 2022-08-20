@@ -1,5 +1,6 @@
 
 -- Neovim lua configuration
+-- ~/.config/nvim/init.lua
 
 -- Note:
 --  Required steps to make this configuration work on a new system:
