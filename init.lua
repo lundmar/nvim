@@ -10,9 +10,6 @@
 
 -- NVIM SETTINGS --
 
--- cmd('syntax on')
---vim.api.nvim_command('filetype plugin indent on')
-
 -- Set colors etc.
 vim.o.termguicolors = true
 vim.o.background = 'dark'
@@ -21,23 +18,6 @@ vim.o.background = 'dark'
 --vim.cmd 'colorscheme nightfox'
 --vim.cmd 'colorscheme base16-irblack'
 vim.cmd 'colorscheme base16-da-one-black'
-
--- Do not save when switching buffers
--- vim.o.hidden = true
-
--- Decrease update time
---vim.o.timeoutlen = 500
---vim.o.updatetime = 200
-
--- Number of screen lines to keep above and below the cursor
---vim.o.scrolloff = 8
-
--- Better editor UI
---vim.o.number = true
---vim.o.numberwidth = 2
---vim.o.relativenumber = true
---vim.o.signcolumn = 'yes'
---vim.o.cursorline = true
 
 -- Better editing experience
 vim.o.expandtab = true
@@ -49,26 +29,15 @@ vim.o.textwidth = 300
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = -1 -- If negative, shiftwidth value is used
---vim.o.list = true
---vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
---vim.o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
---vim.o.formatoptions = 'qrn1'
 
 -- Makes neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = 'unnamedplus'
-
--- Case insensitive searching UNLESS /C or capital in search
---vim.o.ignorecase = true
---vim.o.smartcase = true
 
 -- Undo and backup options
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true
 vim.o.swapfile = false
--- vim.o.backupdir = '/tmp/'
--- vim.o.directory = '/tmp/'
--- vim.o.undodir = '/tmp/'
 
 -- Remember items in commandline history
 vim.o.history = 1000
