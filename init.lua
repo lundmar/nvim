@@ -34,6 +34,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = -1 -- If negative, shiftwidth value is used
 vim.o.showtabline = 2
+vim.o.laststatus = 3 -- global statusline
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.o.signcolumn = "yes"
@@ -163,6 +164,15 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+-- Enable colorscheme preview in telescope
+require "telescope".setup {
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  }
+}
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
