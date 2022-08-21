@@ -5,7 +5,7 @@
 -- Note:
 --  Required steps to make this configuration work on a new system:
 --   1. git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
---   2. :PackerInstall
+--   2. Run :PackerInstall
 --
 -- Note:
 --  Remember to sometimes run :checkhealth to optimize your nvim configuration
@@ -209,7 +209,7 @@ return require('packer').startup(function(use)
     -- Function list stuff
     use 'preservim/tagbar'
 
-    -- Remeber last location
+    -- Remember last location
     use 'farmergreg/vim-lastplace'
 
     -- Generate tags
