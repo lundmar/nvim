@@ -1,5 +1,5 @@
 
--- Neovim lua configuration
+-- Neovim lua configuration - Martin Lund
 -- ~/.config/nvim/init.lua
 
 -- Note:
@@ -17,10 +17,7 @@
 -- Set colors etc.
 vim.o.termguicolors = true
 vim.o.background = 'dark'
---vim.cmd 'colorscheme base16-outrun-dark'
---vim.cmd 'colorscheme base16-ayu-dark'
 --vim.cmd 'colorscheme nightfox'
---vim.cmd 'colorscheme base16-irblack'
 vim.cmd 'colorscheme base16-da-one-black'
 
 -- Better editing experience
@@ -44,7 +41,7 @@ vim.o.number = true
 vim.o.numberwidth = 2
 vim.o.ignorecase = true
 
--- Makes neovim and host OS clipboard play nicely with each other
+-- Make neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = 'unnamedplus'
 
 -- Undo and backup options
@@ -196,7 +193,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
 
