@@ -1,7 +1,7 @@
-
+--
 -- Neovim lua configuration - Martin Lund
 -- ~/.config/nvim/init.lua
-
+--
 -- Note:
 --  Required steps to make this configuration work on a new system:
 --   1. git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -9,7 +9,7 @@
 --
 -- Note:
 --  Remember to sometimes run :checkhealth to optimize your nvim configuration
-
+--
 
 
 -- NVIM SETTINGS --
