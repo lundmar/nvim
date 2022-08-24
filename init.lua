@@ -38,7 +38,6 @@ vim.o.wrap = false
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.numberwidth = 2
-vim.o.ignorecase = true
 
 -- Make neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = 'unnamedplus'
