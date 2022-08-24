@@ -17,8 +17,7 @@
 -- Set colors etc.
 vim.o.termguicolors = true
 vim.o.background = 'dark'
---vim.cmd 'colorscheme nightfox'
-vim.cmd 'colorscheme base16-da-one-black'
+--vim.cmd 'colorscheme base16-da-one-black'
 
 -- Better editing experience
 vim.o.expandtab = true
@@ -220,7 +219,6 @@ return require('packer').startup(function(use)
 
     -- Colorschemes
     use 'RRethy/nvim-base16'
-    use 'EdenEast/nightfox.nvim'
 
     -- Telescope fuzzy finder
     use 
