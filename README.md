@@ -12,6 +12,6 @@ A simple Neovim lua configuration which provides an powerful PDE (Personalized D
  * Tag file is managed by gutentags which makes it possible to quickly navigate huge code bases
  * Tabs are 4 spaces by default
  * Copy buffer is shared with system clipboard
- * Remembers latest cursor position
+ * Remembers last cursor position
  * Git support (shows changed lines etc.)
  * Press F8 to show function list etc.
