@@ -1,6 +1,9 @@
 # Neovim configuration
 
-A simple Neovim lua configuration which provides a powerful PDE (Personalized Development Environment) for C/C++ development.
+A simple Neovim lua configuration which provides a powerful PDE (Personalized
+Development Environment) for C/C++ development.
+
+Feel free to use and share.
 
 
 ## Main features
@@ -23,6 +26,10 @@ A simple Neovim lua configuration which provides a powerful PDE (Personalized De
 2. Run `git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 3. Open nvim and run `:PackerInstall`
 
-## Note
+## Notes
 
 Remember to sometimes run `:checkhealth` to optimize your nvim configuration
+
+I see a lot of people remapping nvim keys but I recommend using default keys
+because then you can use nvim everywhere and it is a lot easier to maintain.
+
