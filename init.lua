@@ -58,7 +58,9 @@ vim.o.splitbelow = true
 -- Enable mouse in all five modes
 vim.opt.mouse = "a"
 
-
+-- Search non-case sensitive
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- PLUGIN CONFIGURATION --
 
