@@ -1,5 +1,5 @@
 --
--- Neovim lua configuration - Martin Lund
+-- A simple Neovim lua configuration
 -- ~/.config/nvim/init.lua
 --
 -- Note:
