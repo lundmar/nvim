@@ -12,7 +12,8 @@
 --
 
 
--- NVIM SETTINGS --
+
+-- GENERAL NVIM SETTINGS --
 
 -- Set colors etc.
 vim.o.termguicolors = true
@@ -58,9 +59,11 @@ vim.o.splitbelow = true
 -- Enable mouse in all five modes
 vim.opt.mouse = "a"
 
--- Search non-case sensitive
+-- Make search non-case sensitive
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+
 
 -- PLUGIN CONFIGURATION --
 
@@ -85,17 +88,22 @@ vim.g.gutentags_cache_dir = '~/.gutentags'
 -- Enable treesitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  ignore_install = {
+      -- "javascript"
+  }, -- List of parsers to ignore installing
   highlight = {
-    enable = true,               -- false will disable the whole extension
-    disable = { "go", "rust" },  -- list of language that will be disabled
+    enable = true,                  -- false will disable the whole extension
+    -- disable = { "go", "rust" },  -- list of language that will be disabled
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable = false, disable = {"yaml"} },
+  indent = {
+      enable = false,
+      -- disable = {"yaml"}
+  },
 }
 
 -- Setup nvim-cmp
