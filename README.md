@@ -15,3 +15,14 @@ A simple Neovim lua configuration which provides a powerful PDE (Personalized De
  * Remembers last cursor position
  * Git support (shows changed lines etc.)
  * Press F8 to show function list etc.
+
+
+## Installation
+
+1. Put init.lua here: ~/.config/nvim/init.lua
+2. git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+3. Open nvim and run :PackerInstall
+
+## Note
+
+Remember to sometimes run :checkhealth to optimize your nvim configuration
