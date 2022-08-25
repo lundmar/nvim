@@ -1,6 +1,6 @@
 # Neovim configuration
 
-A simple Neovim lua configuration which provides an powerful PDE (Personalized Development Environment) for C/C++ development.
+A simple Neovim lua configuration which provides a powerful PDE (Personalized Development Environment) for C/C++ development.
 
 
 ## Main features
