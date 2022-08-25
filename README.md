@@ -25,4 +25,4 @@ A simple Neovim lua configuration which provides a powerful PDE (Personalized De
 
 ## Note
 
-Remember to sometimes run :checkhealth to optimize your nvim configuration
+Remember to sometimes run `:checkhealth` to optimize your nvim configuration
