@@ -33,5 +33,6 @@ Tested with latest Neovim git source from https://github.com/neovim/neovim.git
 Remember to sometimes run `:checkhealth` to optimize your nvim configuration
 
 I see a lot of people remapping nvim keys but I recommend using default keys
-because then you can use nvim everywhere and it is a lot easier to maintain.
+because then you can use nvim everywhere and it is a lot easier to maintain. Do
+not become a slave of custom mappings that only works with your setup.
 
