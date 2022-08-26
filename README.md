@@ -5,6 +5,7 @@ Development Environment) for C/C++ development.
 
 Feel free to use and share.
 
+Tested with latest Neovim git source from https://github.com/neovim/neovim.git
 
 ## Main features
 
