@@ -77,7 +77,7 @@ vim.g.tagbar_position = 'left'
 vim.g.gutentags_cache_dir = '~/.gutentags'
 
 -- Enable treesitter
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {
       -- "javascript"
@@ -227,6 +227,13 @@ return require('packer').startup(function(use)
     {
         'lewis6991/gitsigns.nvim',
         config = function() require('gitsigns').setup() end
+    }
+
+    -- Improved diff tool
+    use
+    {
+        'sindrets/diffview.nvim',
+        requires = 'nvim-lua/plenary.nvim'
     }
 
     -- Colorschemes
