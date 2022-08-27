@@ -9,6 +9,7 @@
 --
 -- Note:
 --  Remember to sometimes run :checkhealth to optimize your nvim configuration
+--  and :PackerSync to keep plugins up to date.
 --
 
 
