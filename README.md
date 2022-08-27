@@ -30,7 +30,8 @@ Tested with latest Neovim git source from https://github.com/neovim/neovim.git
 
 ## Notes
 
-Remember to sometimes run `:checkhealth` to optimize your nvim configuration
+Remember to sometimes run `:checkhealth` to optimize your nvim configuration and
+`:PackerSync` to keep plugins up to date.
 
 I see a lot of people remapping nvim keys but I recommend using default keys
 because then you can use nvim everywhere and it is a lot easier to maintain. Do
