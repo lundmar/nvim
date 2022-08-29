@@ -68,6 +68,84 @@ vim.o.smartcase = true
 
 -- PLUGIN CONFIGURATION --
 
+-- Enable packer package manager
+require('packer').startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+
+    -- Language server stuff
+    use
+    {
+        'neovim/nvim-lspconfig',
+        config = function() require('lspconfig').clangd.setup{} end
+    }
+
+    -- Completion stuff
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+
+    -- Status line stuff
+    use
+    {
+        'nvim-lualine/lualine.nvim',
+        config = function() require('lualine').setup() end
+    }
+
+    -- Syntax highlighting stuff
+    use
+    {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
+    -- Function list stuff
+    use 'preservim/tagbar'
+
+    -- Remember last location
+    use 'farmergreg/vim-lastplace'
+
+    -- Generate tags
+    use 'ludovicchabant/vim-gutentags'
+
+    -- git stuff
+    use
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup() end
+    }
+
+    -- Improved diff tool
+    use
+    {
+        'sindrets/diffview.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function() require('diffview').setup({use_icons = false}) end
+    }
+
+    -- Colorschemes
+    use 'RRethy/nvim-base16'
+
+    -- Telescope fuzzy finder
+    use 
+    {
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- Manage comments Better
+    use
+    {
+        'terrortylor/nvim-comment',
+        config = function() require('nvim_comment').setup() end
+    }
+
+end)
+
 -- Key to enable Tagbar
 vim.api.nvim_set_keymap('n', '<F8>', ':TagbarToggle<CR>', { noremap = false, silent = true })
 
@@ -77,7 +155,7 @@ vim.g.tagbar_position = 'left'
 -- Keep generated gutentags in one place
 vim.g.gutentags_cache_dir = '~/.gutentags'
 
--- Enable treesitter
+-- Setup treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {
@@ -171,88 +249,10 @@ require('telescope').setup {
   }
 }
 
--- Setup lspconfig.
+-- Setup lsp-config
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['clangd'].setup {
     capabilities = capabilities
 }
-
--- Enable packer package manager
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
-    -- Language server stuff
-    use
-    {
-        'neovim/nvim-lspconfig',
-        config = function() require('lspconfig').clangd.setup{} end
-    }
-
-    -- Completion stuff
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-
-    -- Status line stuff
-    use
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function() require('lualine').setup() end
-    }
-
-    -- Syntax highlighting stuff
-    use
-    {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-
-    -- Function list stuff
-    use 'preservim/tagbar'
-
-    -- Remember last location
-    use 'farmergreg/vim-lastplace'
-
-    -- Generate tags
-    use 'ludovicchabant/vim-gutentags'
-
-    -- git stuff
-    use
-    {
-        'lewis6991/gitsigns.nvim',
-        config = function() require('gitsigns').setup() end
-    }
-
-    -- Improved diff tool
-    use
-    {
-        'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require('diffview').setup({use_icons = false}) end
-    }
-
-    -- Colorschemes
-    use 'RRethy/nvim-base16'
-
-    -- Telescope fuzzy finder
-    use 
-    {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    -- Manage comments Better
-    use
-    {
-        'terrortylor/nvim-comment',
-        config = function() require('nvim_comment').setup() end
-    }
-
-end)
