@@ -17,52 +17,53 @@
 -- GENERAL NVIM SETTINGS --
 
 -- Set colors etc.
-vim.o.termguicolors = true
-vim.o.background = 'dark'
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
 vim.cmd 'colorscheme base16-da-one-black'
 
 -- Better editing experience
-vim.o.expandtab = true
-vim.o.smarttab = true
-vim.o.cindent = true
-vim.o.autoindent = true
-vim.o.wrap = true
-vim.o.textwidth = 80
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.softtabstop = -1 -- If negative, shiftwidth value is used
-vim.o.showtabline = 2
-vim.o.laststatus = 3 -- global statusline
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
-vim.o.signcolumn = "yes"
-vim.o.wrap = false
-vim.o.cursorline = true
-vim.o.number = true
-vim.o.numberwidth = 2
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.cindent = true
+vim.opt.autoindent = true
+vim.opt.wrap = true
+vim.opt.textwidth = 80
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = -1 -- If negative, shiftwidth value is used
+vim.opt.showtabline = 2
+vim.opt.laststatus = 3 -- global statusline
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+vim.opt.cursorline = true
+vim.opt.number = true
+vim.opt.numberwidth = 2
+vim.opt.relativenumber = false
 
 -- Make neovim and host OS clipboard play nicely with each other
-vim.o.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- Undo and backup options
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.undofile = true
-vim.o.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = true
+vim.opt.swapfile = false
 
 -- Remember items in commandline history
-vim.o.history = 1000
+vim.opt.history = 1000
 
 -- Better buffer splitting
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Enable mouse in all five modes
 vim.opt.mouse = "a"
 
 -- Make search non-case sensitive
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 
 
