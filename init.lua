@@ -26,7 +26,7 @@ vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.cindent = true
 vim.opt.autoindent = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.textwidth = 80
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -35,12 +35,16 @@ vim.opt.showtabline = 2
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
+vim.opt.signcolumn = 'yes'
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.relativenumber = false
+vim.opt.hidden = true  -- Allow switching buffers without saving
+
+-- Show stuff we don't want so we can delete it
+vim.opt.list = true
+vim.opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
 -- Make neovim and host OS clipboard play nicely with each other
 vim.opt.clipboard = 'unnamedplus'
