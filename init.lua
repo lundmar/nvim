@@ -39,7 +39,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.numberwidth = 2
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.hidden = true  -- Allow switching buffers without saving
 
 -- Show stuff we don't want so we can delete it
