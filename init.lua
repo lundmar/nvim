@@ -149,6 +149,13 @@ require('packer').startup(function(use)
         config = function() require('nvim_comment').setup() end
     }
 
+    use
+    {
+        'windwp/nvim-autopairs',
+        after = 'nvim-cmp',
+        config = function() require('nvim-autopairs').setup {} end
+    }
+
 end)
 
 -- Key to enable Tagbar
