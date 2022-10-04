@@ -136,7 +136,7 @@ require('packer').startup(function(use)
     use 'RRethy/nvim-base16'
 
     -- Telescope fuzzy finder
-    use 
+    use
     {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -145,8 +145,8 @@ require('packer').startup(function(use)
     -- Manage comments Better
     use
     {
-        'terrortylor/nvim-comment',
-        config = function() require('nvim_comment').setup() end
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
     }
 
     use
