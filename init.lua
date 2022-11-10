@@ -19,7 +19,7 @@
 -- Set colors etc.
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
-vim.cmd 'colorscheme base16-da-one-black'
+--vim.cmd 'colorscheme base16-da-one-black'
 
 -- Better editing experience
 vim.opt.expandtab = true
@@ -75,6 +75,20 @@ vim.opt.smartcase = true
 
 -- Enable packer package manager
 require('packer').startup(function(use)
+
+    local ensure_packer = function()
+        local fn = vim.fn
+        local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+        if fn.empty(fn.glob(install_path)) > 0 then
+            fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+            vim.cmd [[packadd packer.nvim]]
+            return true
+        end
+        return false
+    end
+
+    local packer_bootstrap = ensure_packer()
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
