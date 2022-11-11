@@ -142,6 +142,12 @@ vim.g.tagbar_position = 'left'
 vim.g.gutentags_cache_dir = '~/.gutentags'
 
 -- Setup treesitter
+local status, configs = pcall(require, "nvim-treesitter.configs")
+if not status then
+    print("Could not find nvim-treesitter.configs!")
+    return
+end
+
 require('nvim-treesitter.configs').setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {
