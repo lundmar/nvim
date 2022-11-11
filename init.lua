@@ -12,6 +12,14 @@
 --  and :PackerSync to keep plugins up to date.
 --
 
+-- HOST SYSTEM CHECKS --
+
+-- Check for installed ctags tool
+if vim.fn.executable('ctags') ~= 1 then
+    print("Please install ctags!")
+    return
+end
+
 
 
 -- PLUGIN CONFIGURATION --
