@@ -14,66 +14,29 @@
 
 
 
--- GENERAL NVIM SETTINGS --
-
--- Set colors etc.
-vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd 'colorscheme base16-da-one-black'
-
--- Better editing experience
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.cindent = true
-vim.opt.autoindent = true
-vim.opt.wrap = false
-vim.opt.textwidth = 80
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = -1 -- If negative, shiftwidth value is used
-vim.opt.showtabline = 2
-vim.opt.laststatus = 3 -- global statusline
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.signcolumn = 'yes'
-vim.opt.cursorline = true
-vim.opt.number = true
-vim.opt.numberwidth = 2
-vim.opt.relativenumber = true
-vim.opt.hidden = true  -- Allow switching buffers without saving
-
--- Show stuff we don't want so we can delete it
-vim.opt.list = true
-vim.opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
-
--- Make neovim and host OS clipboard play nicely with each other
-vim.opt.clipboard = 'unnamedplus'
-
--- Undo and backup options
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.undofile = true
-vim.opt.swapfile = false
-
--- Remember items in commandline history
-vim.opt.history = 1000
-
--- Better buffer splitting
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- Enable mouse in all five modes
-vim.opt.mouse = "a"
-
--- Make search non-case sensitive
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
-
-
 -- PLUGIN CONFIGURATION --
 
--- Enable packer package manager
+-- Install package manager if not already installed
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+local packer_bootstrap = ensure_packer()
+
+-- Quit if packer not installed (e.g. first run)
+local status, packer = pcall(require, "packer")
+if not status then
+    print("No package manager found!")
+    return
+end
+
+-- Enable packer package manager and install listed plugins
 require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -159,6 +122,11 @@ require('packer').startup(function(use)
         config = function () require'alpha'.setup(require'alpha.themes.startify'.config) end
     }
 
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
 
 -- Key to enable Tagbar
@@ -313,3 +281,69 @@ require('lspconfig')['clangd'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+
+
+-- GENERAL NVIM SETTINGS --
+
+-- Set colors etc.
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+
+-- Better editing experience
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.cindent = true
+vim.opt.autoindent = true
+vim.opt.wrap = false
+vim.opt.textwidth = 80
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = -1 -- If negative, shiftwidth value is used
+vim.opt.showtabline = 2
+vim.opt.laststatus = 3 -- global statusline
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.signcolumn = 'yes'
+vim.opt.cursorline = true
+vim.opt.number = true
+vim.opt.numberwidth = 2
+vim.opt.relativenumber = true
+vim.opt.hidden = true  -- Allow switching buffers without saving
+
+-- Show stuff we don't want so we can delete it
+vim.opt.list = true
+vim.opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+
+-- Make neovim and host OS clipboard play nicely with each other
+vim.opt.clipboard = 'unnamedplus'
+
+-- Undo and backup options
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = true
+vim.opt.swapfile = false
+
+-- Remember items in commandline history
+vim.opt.history = 1000
+
+-- Better buffer splitting
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Enable mouse in all five modes
+vim.opt.mouse = "a"
+
+-- Make search non-case sensitive
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+
+
+-- COLORSCHEME CONFIGURATION --
+
+local status, _ = pcall(vim.cmd, "colorscheme base16-da-one-black")
+if not status then
+  print("Colorscheme not found!")
+  return
+end
