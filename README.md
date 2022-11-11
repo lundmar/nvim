@@ -25,8 +25,6 @@ Tested with latest Neovim git source from https://github.com/neovim/neovim.git
 
 0. Clone, build, and install latest Neovim from https://github.com/neovim/neovim.git
 1. Put init.lua here: ~/.config/nvim/init.lua
-2. Run `git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-3. Open nvim and run `:PackerInstall`
 
 ## Notes
 
