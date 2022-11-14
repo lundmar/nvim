@@ -114,6 +114,7 @@ require('packer').startup(function(use)
         config = function() require('Comment').setup() end
     }
 
+    -- Automatically match start and end of braces etc.
     use
     {
         'windwp/nvim-autopairs',
@@ -121,6 +122,7 @@ require('packer').startup(function(use)
         config = function() require('nvim-autopairs').setup {} end
     }
 
+    -- Greeter
     use
     {
         'goolord/alpha-nvim',
