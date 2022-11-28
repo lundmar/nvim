@@ -296,7 +296,29 @@ require('lspconfig')['clangd'].setup {
     flags = lsp_flags,
 }
 
+require'lspconfig'.pyright.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
+require'lspconfig'.luau_lsp.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require'lspconfig'.bashls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require'lspconfig'.cmake.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
 -- GENERAL NVIM SETTINGS --
 
