@@ -9,10 +9,13 @@
 
 -- HOST SYSTEM CHECKS --
 
--- Check for installed ctags tool
-if vim.fn.executable('ctags') ~= 1 then
-    print("Please install ctags!")
-    return
+-- Check for installed tools
+tools={'ctags', 'bash-language-server', 'clangd', 'pyright-langserver', 'cmake-language-server'}
+for i, tool in ipairs(tools) do
+    if vim.fn.executable(tool) ~= 1 then
+        print(string.format("Please install %s!", tool))
+        return
+    end
 end
 
 
