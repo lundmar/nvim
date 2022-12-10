@@ -339,7 +339,7 @@ vim.opt.textwidth = 80
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = -1 -- If negative, shiftwidth value is used
-vim.opt.showtabline = 2
+-- vim.opt.showtabline = 2
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
@@ -384,6 +384,11 @@ vim.opt.smartcase = true
 -- Enable colorscheme
 require('onedark').setup
 {
-    style = 'darker'
+    style = 'darker',
+    transparent = true,
+    lualine =
+    {
+        transparent = true, -- lualine center bar transparency
+    },
 }
 require('onedark').load()
