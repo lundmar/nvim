@@ -100,8 +100,8 @@ require('packer').startup(function(use)
         config = function() require('diffview').setup({use_icons = false}) end
     }
 
-    -- Colorschemes
-    use 'RRethy/nvim-base16'
+    -- Colorscheme
+    use 'navarasu/onedark.nvim'
 
     -- Telescope fuzzy finder
     use
@@ -381,8 +381,9 @@ vim.opt.smartcase = true
 
 -- COLORSCHEME CONFIGURATION --
 
-local status, _ = pcall(vim.cmd, "colorscheme base16-da-one-black")
-if not status then
-  print("Colorscheme not found!")
-  return
-end
+-- Enable colorscheme
+require('onedark').setup
+{
+    style = 'darker'
+}
+require('onedark').load()
