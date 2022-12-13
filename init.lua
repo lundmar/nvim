@@ -390,5 +390,9 @@ require('onedark').setup
     {
         transparent = true, -- lualine center bar transparency
     },
+    colors =
+    {
+        fg = "#ffffff",
+    }
 }
 require('onedark').load()
