@@ -133,6 +133,9 @@ require('packer').startup(function(use)
         config = function () require'alpha'.setup(require'alpha.themes.startify'.config) end
     }
 
+    -- Useful status updates for LSP
+    use 'j-hui/fidget.nvim'
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
@@ -323,6 +326,11 @@ require'lspconfig'.cmake.setup {
     flags = lsp_flags,
 }
 
+-- Turn on lsp status information
+require('fidget').setup()
+
+
+
 -- GENERAL NVIM SETTINGS --
 
 -- Set colors etc.
@@ -393,6 +401,8 @@ require('onedark').setup
     colors =
     {
         fg = "#ffffff",
+        grey = "#5c6370",
+        grey = "#838a98",
     }
 }
 require('onedark').load()
