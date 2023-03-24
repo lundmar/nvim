@@ -93,12 +93,12 @@ require('packer').startup(function(use)
     }
 
     -- Improved diff tool
-    use
-    {
-        'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require('diffview').setup({use_icons = false}) end
-    }
+    -- use
+    -- {
+    --     'sindrets/diffview.nvim',
+    --     requires = 'nvim-lua/plenary.nvim',
+    --     config = function() require('diffview').setup({use_icons = false}) end
+    -- }
 
     -- Colorscheme
     use 'navarasu/onedark.nvim'
