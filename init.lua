@@ -379,7 +379,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Enable mouse in all five modes
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
 
 -- Make search non-case sensitive
 vim.opt.ignorecase = true
